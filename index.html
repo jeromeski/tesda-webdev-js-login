@@ -41,6 +41,7 @@
         border: 0;
         padding: 5px 15px;
         font-size: 20px;
+        margin-top: 1rem;
       }
       button:hover {
         background-color: #6699cc;
@@ -53,7 +54,7 @@
     <center>
       <div>
         <span
-          style="line-height: -5; display: block; font-size:1.5rem; font-weight: bold;"
+          style="line-height: -5; display: block; font-size:1.5rem; font-weight: bold; margin-top: 1rem;"
           >Log In</span
         >
         <sup>Please enter your username & password</sup>
@@ -77,15 +78,15 @@
         <button id="reset" onclick="login.handleEnableInputs()">
           Reset
         </button>
-        <sub
-          id="sub"
-          style="line-height: -5; display: block; margin-top: 1rem;"
-        ></sub>
-        <p
-          id="result"
-          style="line-height: -5; display: block; font-size: 1rem; font-weight: bold;"
-        ></p>
       </div>
+      <sub
+        id="sub"
+        style="line-height: -5; display: block; margin-top: 1rem;"
+      ></sub>
+      <p
+        id="result"
+        style="line-height: -5; display: block; font-size: 1rem; font-weight: bold;"
+      ></p>
     </center>
     <script>
       var username = document.querySelector('input[type="text"]');
