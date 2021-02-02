@@ -54,7 +54,7 @@
     <center>
       <div>
         <span
-          style="line-height: -5; display: block; font-size:1.5rem; font-weight: bold; margin-top: 1rem;"
+          style="line-height: -5; display: block; font-size:1.5rem; font-weight: bold; margin-top: 1.25rem;"
           >Log In</span
         >
         <sup>Please enter your username & password</sup>
@@ -64,6 +64,7 @@
           name="usr"
           placeholder="Enter User Name"
           onfocus="this.value=''"
+          autocomplete="off"
         />
         <input
           type="password"
@@ -71,6 +72,7 @@
           id="pword"
           placeholder="Enter Password"
           onfocus="this.value=''"
+          autocomplete="off"
         />
         <button id="login" type="button" onclick="login.handleAuth()">
           Login
