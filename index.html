@@ -97,13 +97,14 @@
       var username = document.querySelector('input[type="text"]');
       username.addEventListener('focus', function() {
         document.getElementById('result').innerHTML = '';
+        document.getElementById('sub').innerHTML = '';
       });
       var login = {
         authUname: 'jeromeski',
         authPword: '12345',
         url: 'https://jeromeg-fullstack.github.io/page-under-construction/',
-        counter: 0,
-        limit: 3,
+        counter: 3,
+        limit: 0,
         success: 'Login Success! Redirecting...',
         failed: 'Wrong login credentials. Try again!',
         failed2: 'You have reached the limit of login attempts',
@@ -121,16 +122,18 @@
               location.reload();
             }, 1500);
           } else {
-            this.counter++;
+            this.counter--;
             this.handleFailed();
           }
         },
         handleFailed: function() {
-          if (this.counter >= this.limit) {
+          if (this.counter === this.limit) {
             document.querySelector('#sub').innerHTML = this.failed2;
             this.handleTimeOut();
           } else {
             console.log(this.counter);
+            document.querySelector('#sub').innerHTML =
+              'You have ' + this.counter + ' attempts left.';
             document.querySelector('#result').innerHTML = this.failed;
           }
         },
