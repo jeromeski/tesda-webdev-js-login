@@ -132,9 +132,15 @@
             this.handleTimeOut();
           } else {
             console.log(this.counter);
-            document.querySelector('#sub').innerHTML =
-              'You have ' + this.counter + ' attempts left.';
-            document.querySelector('#result').innerHTML = this.failed;
+            if (this.counter === 1) {
+              document.querySelector('#sub').innerHTML =
+                'You have ' + this.counter + ' attempt left.';
+              document.querySelector('#result').innerHTML = this.failed;
+            } else {
+              document.querySelector('#sub').innerHTML =
+                'You have ' + this.counter + ' attempts left.';
+              document.querySelector('#result').innerHTML = this.failed;
+            }
           }
         },
         handleTimeOut: function() {
