@@ -3,12 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TESDA | JS Login | Day 10</title>
+    <link rel="icon" href="favicon.png" />
     <meta
-      name="description"
-      content="TESDA, Web development, Webdev, Activity, Exercise, Test"
+      name="keywords"
+      content="html, css, tesda, TESDA, exercise, activity, webdev, web development, informatics, JS, js, javascript, loops, login, reset, redirect, user, password, timer, countdown, simple validation, validation"
     />
     <meta name="author" content="Jerome Gacoscosim" />
-    <title>TESDA | JS Login | Day 10</title>
     <style>
       body {
         font-family: 'Century Gothic';
@@ -59,7 +60,13 @@
     <center>
       <div>
         <span
-          style="line-height: -5; display: block; font-size:1.5rem; font-weight: bold; margin-top: 1.25rem;"
+          style="
+            line-height: -5;
+            display: block;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-top: 1.25rem;
+          "
           >Log In</span
         >
         <sup>Please enter your username & password</sup>
@@ -86,16 +93,21 @@
       </div>
       <sub
         id="sub"
-        style="line-height: -5; display: block; margin-top: 1rem;"
+        style="line-height: -5; display: block; margin-top: 1rem"
       ></sub>
       <p
         id="result"
-        style="line-height: -5; display: block; font-size: 1rem; font-weight: bold;"
+        style="
+          line-height: -5;
+          display: block;
+          font-size: 1rem;
+          font-weight: bold;
+        "
       ></p>
     </center>
     <script>
       var username = document.querySelector('input[type="text"]');
-      username.addEventListener('focus', function() {
+      username.addEventListener('focus', function () {
         login.handleClearWarnings();
       });
       var login = {
@@ -107,11 +119,11 @@
         success: 'Login Success! Redirecting...',
         failed: 'Wrong login credentials. Try again!',
         failed2: 'You have reached the limit of login attempts',
-        handleClearWarnings: function() {
+        handleClearWarnings: function () {
           document.getElementById('result').innerHTML = '';
           document.getElementById('sub').innerHTML = '';
         },
-        handleAuth: function() {
+        handleAuth: function () {
           var un = document.querySelector('#uname').value.toLowerCase();
           var pw = document.querySelector('#pword').value;
           if (un === this.authUname && pw === this.authPword) {
@@ -126,7 +138,7 @@
             this.handleFailed();
           }
         },
-        handleFailed: function() {
+        handleFailed: function () {
           if (this.counter === this.limit) {
             document.querySelector('#sub').innerHTML = this.failed2;
             this.handleTimeOut();
@@ -143,12 +155,12 @@
             }
           }
         },
-        handleTimeOut: function() {
+        handleTimeOut: function () {
           document.getElementById('uname').disabled = true;
           document.getElementById('pword').disabled = true;
           document.getElementById('login').disabled = true;
           var timeleft = 15;
-          var downloadTimer = setInterval(function() {
+          var downloadTimer = setInterval(function () {
             document.getElementById('result').innerHTML =
               'Lockout ends in ' + timeleft + ' seconds';
             timeleft -= 1;
@@ -160,12 +172,12 @@
             }
           }, 1000);
         },
-        handleEnableInputs: function() {
+        handleEnableInputs: function () {
           location.reload();
         },
-        disableResetButton: function() {
+        disableResetButton: function () {
           document.querySelector('#reset').disabled = true;
-        }
+        },
       };
     </script>
   </body>
